@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+wqqdsada
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">    
+    <link rel="stylesheet" type="text/css" href="crypto-icons/font.css">
+    <link rel="stylesheet" type="text/css" href="crypto-icons/styles.css">
+
+
+
+    
+    <title>Interface Crypto Exchanger </title>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <a href="#" class="logo">
+            <i class='bx bxl-bitcoin'></i>
+            <div class="logo-name"><span>Cryp</span>Tex</div>
+        </a>
+        <ul class="side-menu">  
+              
+            <li class="active"><a href="#"onclick="showContent('content1')"><i class='bx bxs-dashboard'></i>Dashboard</a></li>            
+            <li><a href="#"onclick="showContent('content2')"><i class='bx bx-store-alt'></i>Shop</a></li>
+            <li> <a href="#"onclick="showContent('content3')"><i class='bx bx-analyse'></i>Analytics</a></li>
+            <li><a href="#"onclick="showContent('content4')"><i class='bx bx-message-square-dots'></i>Tickets</a></li>
+            <li><a href="#"onclick="showContent('content5')"><i class='bx bx-group'></i>Users</a></li>
+            <li><a href="#"onclick="showContent('content6')"><i class='bx bx-cog'></i>Settings</a></li>
+        </ul>
+    </div>
+    <!-- End of Sidebar -->
+
+    <!-- Main Content -->
+    <div class="interface">
+        <!-- Navbar -->
+        <nav>
+                <i class='bx bx-menu'></i>
+                <form action="#">
+                    <div class="form-input">
+                        <input type="search" placeholder="Search...">
+                        <button class="search-btn" type="submit"><i class='bx bx-search'></i></button>
+                    </div>
+                </form>
+                <input type="checkbox" id="theme-toggle" hidden>
+                <label for="theme-toggle" class="theme-toggle"></label>
+                     <!--<a href="#" class="notif">
+            <i class='bx bx-bell'></i>  
+                    <span class="count">5</span>    
+                </a>
+            </div>-->
+        
+            <div class="dropdown"> 
+                <div class="profile" onclick="menuToggle();">
+                    <img src="admin.jpg">
+                </div>
+                <div class="menu">
+                    <h3>Mertcan Aras<br><span>Investor</span></h3>
+                    <ul>
+                        <li><img src="profile.png"><a href="#">My Profile</a></li>
+                        <li><img src="setting.png"><a href="#">Settings</a></li>
+                        <li><img src="help.png"><a href="#">Help</a></li>
+                        <li><img src="logout.png"><a href="#" class="logout">Logout</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+       
+
+        <main>
+            
+            <!-- Analyses -->
+            <div class="content" id="content1">
+                <div class="header">
+                    <div class="left">
+                        <ul class="breadcrumb">
+                            <a href="#">Anasyafa</a>
+                            /
+                            Dashboard
+                        
+                        </ul> 
+                    </div>  
+                </div>
+                <div class="analyse">
+                    <div class="sales">
+                        <div class="status">
+                            <div class="info">
+                                <h3>Amount</h3>
+                                <h1>$65,024</h1>
+                            </div>
+                            <div class="progresss">
+                                <svg>
+                                    <circle cx="38" cy="38" r="36"></circle>
+                                </svg>
+                                <div class="percentage">
+                                    <p>+81%</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <div class="content" id="content2" style="display:none;">
+                <div class="header">
+                    <div class="left">
+                        <ul class="breadcrumb">
+                            <a href="#">Anasyafa</a>
+                            /
+                            Shop
+                        
+                        
+                        </ul> 
+                    </div>  
+                </div>
+                <div class="container">
+                    <h1>Cyrpto Coins</h1>
+                    <table id="mertGrid" class="display">
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Coin Name</th>
+                                <th>Curent Price</th>
+                                <th>24 Hours Change</th>
+                                <th> image </th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Row 1 Data 1</td>
+                                <td>Row 1 Data 2</td>
+                                <td>Row 1 Data 3</td>
+                                <td>Row 1 Data 3</td>
+                                <td>Row 1 Data 3</td>
+
+                              
+                            </tr>
+                            <tr>
+                                <td>Row 2 Data 1</td>
+                                <td>Row 2 Data 2</td>
+                                 <td>Row 2 Data 3</td>
+                                 <td>Row 1 Data 3</td>
+                               
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div> 
+            <div class="content" id="content3" style="display:none;">
+               <div id="converter" class="cryptoConverter"> 
+                <h2>Crypto Converter </h2>
+                <input type="text" name="amount" id="amount" placeholder="Enter Amount" required>
+                <p> From </p>
+                <div id="select-field">
+                    
+                    <select name="fromCurrency" id="fromCurrency"  onchange="showFromCurrencyName()" data-live-search="true">
+                       
+                        <option value="USD" >USD - US Dollar </option>
+                        <option value="EUR">EUR -Euro</option>
+                        <option value="GBP">GBP - British Pound</option>
+                        <option value="CAD">CAD - Canadian Dollar</option>
+                        <option value="AUD">AUD - Australian Dollar</option>
+                        <option value="JPY">JPY - Japanese Yen</option>
+                        <option value="INR">INR - India Rupee</option>
+                        <option value="NZD">NZD - New Zealand Dollar</option>
+                        <option value="CHF">CHF - Swiss Franc</option>
+                        <option value="ZAR">ZAR - South African Rand</option>
+                        <option value="BGN">BGN - Bulgarian Lev</option>
+                        <option value="SGD">SGD - Singapore Dollar</option>
+                        <option value="HKD">HKD - Hong Kong Dollar</option>
+                        <option value="SEK">SEK - Swedish Krona</option>
+                        <option value="THB">THB - Thai Baht</option>
+                        <option value="HUF">HUF - Hungarian Forint</option>
+                        <option value="CNY">CNY - Chinese Yuan Renminbi</option>
+                        <option value="NOK">NOK - Norwegian Krone</option>
+                        <option value="MXN">MXN - Mexican Peso</option>
+                        <option value="GHS">GHS - Ghanians Cedi</option>
+                        <option value="NGN">NGN - Nigerian Naira</option>
+                    </select>
+                         <div class="reverse">
+                         <a href="#" onclick="swapSelectContents()"><i class="fas fa-exchange-alt"></i></a>
+                        </div>
+                    <p2> To</p2>
+                    <select name="toCurrency" id="toCurrency" onchange="showCurrencyName()">
+                        <option value="BTC">Bitcoin (BTC) </option>
+                        <option value="ETH">Ethereum (ETH)</option>
+                        <option value="USDT">Tether (USDT)</option>
+                        <option value="BNB">Binance Coin (BNB)</option>
+                        <option value="USDC">USD Coin (USDC)</option>
+                        <option value="XRP">XRP (XRP)</option>
+                        <option value="BUSD">Binance USD (BUSD)</option>
+                        <option value="ADA">cardano (ADA)</option>
+                        <option value="DOGE">Dogecoin (DOGE)</option>
+                        <option value="MATIC">Polygon (MATIC)</option>
+                        <option value="SOL">Solana (SOL)</option>
+                        <option value="DOT">Polkadot (DOT)</option>
+                        <option value="SHIB">Shiba Inu (SHIB)</option>
+                        <option value="LTC">Litecoin (LTC)</option>
+                        <option value="TRX">Tron (TRX)</option>
+                        <option value="AVAX">Avalanche (AVAX)</option>
+                        
+                    </select>
+    
+                </div>
+    
+                <br>
+    
+                <button type="button" id="convert" class="primary-btn">
+                    Convert
+                </button>
+                
+            
+               
+    
+            </form>
+            
+            <p id="result">
+        </div>
+        </div>
+            
+        </main>
+    </div>
+    </div> 
+   
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+<script src="script.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js"></script>
+</body>
+
+</html>
