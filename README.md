@@ -1,1 +1,2 @@
-# crypto-interface
+# Project
+Yaz stajı projesi
